@@ -12,9 +12,9 @@ while True:
     except ValueError:
         print("Not a valid choice! Try again!")
 city = input("\nEnter city name here: ")
+os.system('cls' if os.name == 'nt' else 'clear')
 
 if forecast == 1:
-    os.system('cls' if os.name == 'nt' else 'clear')
     api_call = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=8301dd732a73e8670d3c380f82e92cf0&units=metric"
 
     json_data = requests.get(api_call).json()
@@ -24,7 +24,6 @@ if forecast == 1:
 
     print("Current temperature in " + city + " is: " + str(temperature) + " C° with " + weather)
 if forecast == 2:
-    os.system('cls' if os.name == 'nt' else 'clear')
     api_call = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=8301dd732a73e8670d3c380f82e92cf0&units=metric"
 
     json_data = requests.get(api_call).json()
